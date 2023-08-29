@@ -59,8 +59,8 @@ function Cocktails() {
           } else {
             return (
               <li key={cocktail.id}>
-                {cocktail.name} <br></br>ingredients:{cocktail.ingredients}{' '}
-                <br></br>price: ${cocktail.price}
+                <b>{cocktail.name}</b> <br></br>Ingredients:{' '}
+                {cocktail.ingredients} <br></br>Price: ${cocktail.price}
                 <br></br>
                 <button
                   onClick={() => {

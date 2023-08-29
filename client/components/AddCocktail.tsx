@@ -34,7 +34,7 @@ function AddCocktail() {
 
   return (
     <>
-      <h1>Add new Cocktail</h1>
+      <h2>Add new Cocktail</h2>
 
       <form onSubmit={handleSubmit}>
         <p>

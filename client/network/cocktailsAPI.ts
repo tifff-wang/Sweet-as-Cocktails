@@ -17,6 +17,5 @@ export async function deleteCocktail(id: string): Promise<Cocktail[]> {
 }
 
 export async function editCocktail(form: Cocktail): Promise<Cocktail> {
-  console.log(`form.id: ${form.id}`)
   return await networker.patch(`${path}/${form.id}`, form)
 }

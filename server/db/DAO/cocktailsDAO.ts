@@ -19,7 +19,7 @@ export function updateCocktail(update: Cocktail): Promise<Cocktail[]> {
   return db('cocktails')
     .where('id', update.id)
     .update('name', update.name)
-    .update('mfg', update.ingredients)
+    .update('ingredients', update.ingredients)
     .update('price', update.price)
     .returning(cocktailColumn)
 }

@@ -1,7 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from 'react'
-import * as api from '../network/cocktailsAPI.ts'
-import * as Models from '../../models/cocktails.ts'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useCocktails } from '../hooks/hooks.ts'
 
 const initialFormData = {
   name: '',
@@ -12,13 +10,8 @@ const initialFormData = {
 function AddCocktail() {
   const [form, setForm] = useState(initialFormData)
 
-  const queryClient = useQueryClient()
-
-  const cocktailAdd = useMutation(api.addCocktail, {
-    onSuccess: async () => {
-      queryClient.invalidateQueries(['cocktail'])
-    },
-  })
+  const hook = useCocktails()
+  const cocktailAdd = hook.useAddCocktail()
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target

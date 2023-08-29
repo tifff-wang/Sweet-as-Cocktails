@@ -1,6 +1,25 @@
-import connection from './connection.ts'
-import { Cocktail } from '../../models/cocktails.ts'
+import { db } from '../db.ts'
+import { Cocktail } from '../../../models/cocktails.ts'
 
-export async function getAllCocktails(db = connection): Promise<Cocktail[]> {
+const cocktailColumn = ['id', 'name', 'ingredients', 'price']
+
+export function getCocktails(): Promise<Cocktail[]> {
   return db('cocktails').select()
+}
+
+export function addCocktail(cocktail: Cocktail): Promise<Cocktail[]> {
+  return db('cocktails').insert(cocktail).returning(cocktailColumn)
+}
+
+export function deleteWidget(id: number) {
+  return db('cocktails').where('id', id).del()
+}
+
+export function updateWidget(update: Cocktail): Promise<Cocktail[]> {
+  return db('cocktails')
+    .where('id', update.id)
+    .update('name', update.name)
+    .update('mfg', update.ingredients)
+    .update('price', update.price)
+    .returning(cocktailColumn)
 }

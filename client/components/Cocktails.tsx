@@ -15,16 +15,17 @@ function Cocktails() {
     },
   })
 
-  async function onDeleteClicked(id: number) {
-    cocktailDelete.mutate(id.toString())
-    console.log('deleting', id)
+  function onDeleteClicked(id?: number) {
+    if (id) {
+      cocktailDelete.mutate(id.toString())
+    }
   }
 
-  const cocktailEdit = useMutation(api.editCocktail, {
-    onSuccess: async () => {
-      queryClient.invalidateQueries(['cocktail'])
-    },
-  })
+  async function onEditClicked(id?: number) {
+    if (id) {
+      setEditFormID(id)
+    }
+  }
 
   const {
     data: cocktails,
@@ -42,12 +43,6 @@ function Cocktails() {
 
   async function afterEditing() {
     setEditFormID(null)
-    // await fetchCocktails()
-  }
-
-  async function onEditClicked(id: number) {
-    setEditFormID(id)
-    cocktailEdit.mutate(form)
   }
 
   return (

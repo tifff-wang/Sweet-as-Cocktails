@@ -1,11 +1,11 @@
-import { Cocktail } from '../../models/cocktails' 
+import { Cocktail } from '../../models/cocktails'
 import * as dao from '../db/DAO/cocktailsDAO'
 
 export async function getCocktails(): Promise<Cocktail[]> {
   return await dao.getCocktails()
 }
 
-export async function addWidget(cocktail: Cocktail) {
+export async function addCocktail(cocktail: Cocktail) {
   return await dao.addCocktail(cocktail)
 }
 

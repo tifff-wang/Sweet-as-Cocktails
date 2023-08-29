@@ -11,7 +11,7 @@ function AddCocktail() {
   const [form, setForm] = useState(initialFormData)
 
   const hook = useCocktails()
-  const cocktailAdd = hook.useAddCocktail()
+  const cocktailAdd = hook.add
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target

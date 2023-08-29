@@ -6,7 +6,7 @@ import { useCocktails } from '../hooks/hooks.ts'
 function Cocktails() {
   const [editFormID, setEditFormID] = useState<number | null>(null)
   const hook = useCocktails()
-  const cocktailDelete = hook.useDeleteCocktail()
+  const cocktailDelete = hook.delete
 
   function onDeleteClicked(id?: number) {
     if (id) {

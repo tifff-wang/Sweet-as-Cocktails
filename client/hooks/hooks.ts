@@ -15,9 +15,9 @@ export function useCocktails() {
   const query = useQuery(['cocktails'], getCocktails)
   return {
     ...query,
-    useAddCocktail,
-    useDeleteCocktail,
-    useEditCocktail,
+    add: useAddCocktail(),
+    delete: useDeleteCocktail(),
+    edit: useEditCocktail(),
   }
 }
 

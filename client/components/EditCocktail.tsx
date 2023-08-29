@@ -17,7 +17,7 @@ function EditCocktail(props: Props) {
 
   const [form, setForm] = useState(initialFormData)
   const hook = useCocktails()
-  const cocktailEdit = hook.useEditCocktail()
+  const cocktailEdit = hook.edit
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target

@@ -1,6 +1,7 @@
 import { useState, FormEvent, ChangeEvent } from 'react'
 import * as api from '../network/cocktailsAPI.ts'
 import * as Models from '../../models/cocktails.ts'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 interface Props {
   afterEditing: () => void
@@ -16,6 +17,13 @@ function EditCocktail(props: Props) {
   }
 
   const [form, setForm] = useState(initialFormData)
+  const queryClient = useQueryClient()
+
+  const cocktailEdit = useMutation(api.editCocktail, {
+    onSuccess: async () => {
+      queryClient.invalidateQueries(['cocktail'])
+    },
+  })
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target
@@ -25,7 +33,7 @@ function EditCocktail(props: Props) {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    await api.editCocktail(form)
+    cocktailEdit.mutate(form)
     props.afterEditing()
   }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import * as Models from '../../models/cocktails.ts'
 import * as api from '../network/cocktailsAPI.ts'
 import AddCocktail from './AddCocktail.tsx'
@@ -7,6 +7,24 @@ import EditCocktail from './EditCocktail.tsx'
 
 function Cocktails() {
   const [editFormID, setEditFormID] = useState<number | null>(null)
+  const queryClient = useQueryClient()
+
+  const cocktailDelete = useMutation(api.deleteCocktail, {
+    onSuccess: async () => {
+      queryClient.invalidateQueries(['cocktail'])
+    },
+  })
+
+  async function onDeleteClicked(id: number) {
+    cocktailDelete.mutate(id.toString())
+    console.log('deleting', id)
+  }
+
+  const cocktailEdit = useMutation(api.editCocktail, {
+    onSuccess: async () => {
+      queryClient.invalidateQueries(['cocktail'])
+    },
+  })
 
   const {
     data: cocktails,
@@ -22,24 +40,14 @@ function Cocktails() {
     return <p>Something went wrong</p>
   }
 
-  function updateCocktail(newCocktail: Models.Cocktail) {
-    setCocktails([...cocktails, newCocktail])
-  }
-
   async function afterEditing() {
     setEditFormID(null)
-    await fetchCocktails()
+    // await fetchCocktails()
   }
 
   async function onEditClicked(id: number) {
     setEditFormID(id)
-  }
-
-  async function onDeleteClicked(id: number) {
-    const isSuccess = await api.deleteCocktail(id.toString())
-    if (isSuccess) {
-      await fetchCocktails()
-    }
+    cocktailEdit.mutate(form)
   }
 
   return (
@@ -79,15 +87,9 @@ function Cocktails() {
         })}
       </ul>
 
-      <AddCocktail updateCocktail={updateCocktail} />
+      <AddCocktail />
     </div>
   )
 }
 
 export default Cocktails
-function userQuery(
-  arg0: string[],
-  getCocktails: any,
-): { data: any; isLoading: any; isError: any } {
-  throw new Error('Function not implemented.')
-}

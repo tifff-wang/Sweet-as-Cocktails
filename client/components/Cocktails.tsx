@@ -1,24 +1,25 @@
 import { useState, useEffect } from 'react'
+import { useQuery } from '@tanstack/react-query'
 import * as Models from '../../models/cocktails.ts'
 import * as api from '../network/cocktailsAPI.ts'
 import AddCocktail from './AddCocktail.tsx'
 import EditCocktail from './EditCocktail.tsx'
 
 function Cocktails() {
-  const [cocktails, setCocktails] = useState([] as Models.Cocktail[])
   const [editFormID, setEditFormID] = useState<number | null>(null)
 
-  useEffect(() => {
-    fetchCocktails()
-  }, [])
+  const {
+    data: cocktails,
+    isLoading,
+    isError,
+  } = useQuery(['cocktail'], api.getCocktails)
 
-  async function fetchCocktails() {
-    try {
-      const dbCocktails = await api.getCocktails()
-      setCocktails(dbCocktails)
-    } catch (err) {
-      console.log(err)
-    }
+  if (!cocktails || isLoading) {
+    return <p>Loading...</p>
+  }
+
+  if (isError) {
+    return <p>Something went wrong</p>
   }
 
   function updateCocktail(newCocktail: Models.Cocktail) {
@@ -84,3 +85,9 @@ function Cocktails() {
 }
 
 export default Cocktails
+function userQuery(
+  arg0: string[],
+  getCocktails: any,
+): { data: any; isLoading: any; isError: any } {
+  throw new Error('Function not implemented.')
+}

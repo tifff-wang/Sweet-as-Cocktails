@@ -11,11 +11,11 @@ export function addCocktail(cocktail: Cocktail): Promise<Cocktail[]> {
   return db('cocktails').insert(cocktail).returning(cocktailColumn)
 }
 
-export function deleteWidget(id: number) {
+export function deleteCocktail(id: number) {
   return db('cocktails').where('id', id).del()
 }
 
-export function updateWidget(update: Cocktail): Promise<Cocktail[]> {
+export function updateCocktail(update: Cocktail): Promise<Cocktail[]> {
   return db('cocktails')
     .where('id', update.id)
     .update('name', update.name)

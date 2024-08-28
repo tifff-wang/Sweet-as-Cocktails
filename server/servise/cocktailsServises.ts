@@ -5,7 +5,7 @@ export async function getCocktails(): Promise<Cocktail[]> {
   return await dao.getCocktails()
 }
 
-export async function addCocktail(cocktail: Cocktail) {
+export async function addCocktail(cocktail: Cocktail): Promise<Cocktail> {
   return await dao.addCocktail(cocktail)
 }
 
@@ -13,6 +13,6 @@ export async function deleteCocktail(id: number) {
   return await dao.deleteCocktail(id)
 }
 
-export async function updateCocktail(cocktail: Cocktail) {
+export async function updateCocktail(cocktail: Cocktail): Promise<Cocktail> {
   return await dao.updateCocktail(cocktail)
 }

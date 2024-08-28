@@ -5,9 +5,10 @@
 ## Technologies Used
 
 **Frontend**: React, Superagent, CSS, HTML
+
 **Backend**: Node.js, Express.js, SQLite3, Knex
 
-### Installation
+## Installation
 
 #### **From the command line**
 
@@ -18,13 +19,20 @@ git clone https://github.com/tifff-wang/sweet-as-cocktails.git
 ```
 cd sweet-as-cocktails
 ```
+Install dependencies 
+```
+npm i
+```
 
+Run migrations & seeds
 ```
-npm install # to install dependencies
+npm run knex migrate:latest
+npm run knex seed:run
 ```
 
+To start the dev server 
 ```
-npm run dev # to start the dev server
+npm run dev
 ```
 
 You can find the server running on [http://localhost:3000](http://localhost:3000) and the client running on [http://localhost:5173](http://localhost:5173).

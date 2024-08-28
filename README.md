@@ -1,35 +1,34 @@
-# Boilerplate: Fullstack with Sass
+# Sweet as Cocktail
 
-## Setup
+**Sweet as Cocktail** is a full-stack web application that I developed during my study in Dev Academy. It is designed for restaurants to manage their cocktail menu. The application allows users to create, read, update, and delete (CRUD) cocktail menu items. The project uses React for the frontend and Node.js for the backend, following a structured and layered architecture. The frontend communicates with the backend through an API layer.
 
-### What's included
+## Technologies Used
 
-This repo includes:
-
-* a single, simple API endpoint (`/api/v1/fruits`)
-* a single React component (`<App />`)
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Vitest and testing library
-* configuration for server-side debugging in VS Code
-* configuration for preprocessing Sass
+**Frontend**: React, Superagent, CSS, HTML
+**Backend**: Node.js, Express.js, SQLite3, Knex
 
 ### Installation
-
-#### **From the Github UI**
-
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
 
 #### **From the command line**
 
 ```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack-query [your-project-name]
-cd [your-project-name]
+git clone https://github.com/tifff-wang/sweet-as-cocktails.git
+```
+
+```
+cd sweet-as-cocktails
+```
+
+```
 npm install # to install dependencies
+```
+
+```
 npm run dev # to start the dev server
 ```
 
 You can find the server running on [http://localhost:3000](http://localhost:3000) and the client running on [http://localhost:5173](http://localhost:5173).
 
----
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-fullstack-query)
+## What's next?
+
+When I look back to the backend of this project, I noticed a lack of comprehensive error handling, particularly when interacting with the database and handling HTTP requests and responses. Moving forward, I plan to focus on learning and enhancing the error handling in Node.js to make the application more maintainable and to provide a better user experience.

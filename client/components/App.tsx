@@ -1,11 +1,13 @@
-import Cocktails from '../components/Cocktails'
+import CocktailMenu from './cocktailMenu/CocktailMenu'
+import AddCocktail from './addCocktail/AddCocktail'
+import './App.styles.scss'
 
 function App() {
   return (
     <>
       <div className="app">
-        <h1>Cocktail testing menu</h1>
-        <Cocktails />
+        <CocktailMenu />
+        <AddCocktail />
       </div>
     </>
   )

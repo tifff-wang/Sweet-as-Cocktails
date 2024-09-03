@@ -1,6 +1,6 @@
-# Sweet as Cocktail
+# Sweet as Cocktails 🍹
 
-**Sweet as Cocktail** is the first full-stack web application that I developed during my study in Dev Academy. It is designed for restaurants to manage their cocktail menu. The application allows users to create, read, update, and delete (CRUD) cocktail menu items. The project uses React for the frontend and Node.js for the backend, following a structured and layered architecture. The frontend communicates with the backend through an API layer.
+**Sweet as Cocktails** is the first full-stack web application that I developed during my study in Dev Academy. It is designed for restaurants to manage their cocktail menu. The application allows users to create, read, update, and delete (CRUD) cocktail menu items. The project uses React for the frontend and Node.js for the backend, following a structured and layered architecture. The frontend communicates with the backend through an API layer.
 
 ## Recent Updates
 
@@ -54,6 +54,6 @@ You can find the server running on [http://localhost:3000](http://localhost:3000
 
 ## What's next?
 
-**Error-handling**: When I look back to the backend of this project, I noticed a lack of comprehensive error handling, particularly when interacting with the database and handling HTTP requests and responses. Moving forward, I plan to focus on learning and enhancing the error handling in Node.js to make the application more maintainable and to provide a better user experience.
+**Error-handling**: When I look back to the backend of this project, I noticed a lack of comprehensive error handling, particularly when interacting with the database and handling HTTP requests and responses. Moving forward, I plan to focus on learning and enhancing error handling in Node.js to make the application more maintainable and to provide a better user experience.
 
 **Add generating menu feature**: I'm planning to introduce a new feature that allows users to customize their cocktail menu and download it as a PDF. I'm also exploring the potential of integrating AI to automatically generate styled menus that reflect users' preferred styles and logos.

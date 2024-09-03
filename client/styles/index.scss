@@ -1,17 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+@import 'variables';
 
-html, 
+html,
 body {
   font-family: 'Montserrat', sans-serif;
-  padding-bottom: 100px;
+  background-color: $background-color;
+  color: $primary-color;
+  padding-bottom: 20px;
 }
 
 li {
-  margin-bottom:20px;
-  line-height: 26px;
+  margin-bottom: 20px;
+  list-style-type: none;
 }
 
 button {
-  margin-right:10px
+  margin-right: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: $secondary-color;
+  color: white;
+  cursor: pointer;
 }
 
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}

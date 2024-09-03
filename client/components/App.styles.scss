@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: 'Satisfy';
+    font-size: 4rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    @media (max-width: 600px) {
+      font-size: 8vw;
+    }
+  }
+}

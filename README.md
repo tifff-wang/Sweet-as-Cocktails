@@ -2,6 +2,12 @@
 
 **Sweet as Cocktails** is the first full-stack web application that I developed during my study in Dev Academy. It is designed for restaurants to manage their cocktail menu. The application allows users to create, read, update, and delete (CRUD) cocktail menu items. The project uses React for the frontend and Node.js for the backend, following a structured and layered architecture. The frontend communicates with the backend through an API layer.
 
+## Technologies
+
+**Frontend**: ![](https://img.shields.io/badge/React-grey) ![](https://img.shields.io/badge/SuperAgent-blue) ![](https://img.shields.io/badge/SaSS-green) ![](https://img.shields.io/badge/HTML-yellow)
+
+**Backend**:  ![](https://img.shields.io/badge/Node.js-grey) ![](https://img.shields.io/badge/Express.js-blue) ![](https://img.shields.io/badge/SQLite3-green) ![](https://img.shields.io/badge/Knex-yellow)
+
 ## Recent Updates
 
 **Front-end UI**: I've upgraded the front-end user interface by utilizing SASS, enhancing both the visual aesthetics and responsiveness of the application.
